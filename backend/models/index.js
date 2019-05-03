@@ -1,9 +1,12 @@
 const mongoose = require("mongoose");
+const path = require("path");
+require("dotenv").config();
 
 mongoose
   .connect(
-    "mongodb+srv://guptaji:d23wuZKg1KkHJBEj@cluster-jnh4i.mongodb.net/test?retryWrites=true",
-    // "mongodb://localhost:27017/Scapic"
+    `mongodb+srv://${process.env.DB_USER}:${
+      process.env.DB_PASSWORD
+    }@cluster-jnh4i.mongodb.net/test?retryWrites=true`,
     {
       useNewUrlParser: true
     }
