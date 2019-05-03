@@ -49,7 +49,7 @@ export default class HomePage extends Component {
       price
     };
 
-    fetch(`http://localhost:3001/Products/`, {
+    fetch(`https://gst-demonstrator1.herokuapp.com/Products/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { Table, Row, Col, Preloader } from "react-materialize";
 
 const center = {
-  textAlign: "center"
+  textAlign: "center",
+  marginTop: "200px"
 };
 
 export default class ItemsList extends Component {
@@ -14,14 +15,18 @@ export default class ItemsList extends Component {
     };
   }
   componentDidMount() {
-    fetch("http://localhost:3001/Products/")
+    fetch("https://gst-demonstrator1.herokuapp.com/Products/")
       .then(res => res.json())
       .then(res => this.setState({ items: res, isLoading: false }));
   }
   render() {
     console.log(this.state);
     if (this.state.isLoading) {
-      return <Preloader size="big" flashing />;
+      return (
+        <div style={center}>
+          <Preloader size="big" flashing />
+        </div>
+      );
     }
     return (
       <div>

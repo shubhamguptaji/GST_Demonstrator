@@ -19,7 +19,7 @@ export default class PieChart extends Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:3001/Products/gst")
+    fetch("https://gst-demonstrator1.herokuapp.com/Products/gst")
       .then(res => res.json())
       .then(res => {
         res.map(res => {
